@@ -1,0 +1,38 @@
+ion-content {
+    position: relative;
+    --background: #021F36;
+    --color: #ffffff;
+}
+
+ion-img {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ion-item {
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    font-size: 22px;
+
+    --background: #021F36;
+    --color: #ffffff;
+}
+ 
+
+ion-button {
+    --background: #FFB719;
+
+    --color: #000000;
+
+    margin: auto;
+    margin-top: 20px;
+
+    height: 10px;
+    width: 100px;
+}
