@@ -1,27 +1,43 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content {
+    position: relative;
+    --background: #021F36;
+    --color: #ffffff;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+h1 {
+    text-align: center;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-img {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    height: 100px;
 }
 
-#container a {
-  text-decoration: none;
+h2 {
+    text-align: center;
 }
+
+#imagen2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 50px;
+  }
+
+.highlighted-word {
+  color: #FFB719; /* Color deseado para la palabra "aquí" */
+}
+
+
+ion-button {
+    --background: #FFB719;
+
+    --color: #000000;
+
+    margin: auto;
+    margin-top: 20px;
+
+    height: 10px;
+    width: 210px;
+}
+
