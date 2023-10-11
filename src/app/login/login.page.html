@@ -2,20 +2,18 @@
   <ion-img src="http://www2.duoc.cl/sites/default/files/logo-2019-.png">
   </ion-img>
 </ion-header>
+
 <ion-content [fullscreen]="true">
   
   <h1>Registr<span class="highlighted-word">APP</span></h1>
 
-  <ion-item>
-    <ion-input label="Nombre de Usuario" labelPlacement="stacked"></ion-input>
-  </ion-item>
+  <ion-card>
+    <ion-input [(ngModel)]="user.usuario" label="User" label-placement="floating" fill="outline" placeholder="Enter text" maxlength="8" minlength="3"></ion-input>
+    <ion-input [(ngModel)]="user.pass" label="Password" label-placement="floating" fill="outline" placeholder="Enter text" type="password" maxlength="4"></ion-input>
+  </ion-card>
 
-  <ion-item>
-    <ion-input label="Contraseña" labelPlacement="stacked" type="password" value="password"></ion-input>
-  </ion-item>
-
-  <ion-button [routerLink]="['/home']" expand="block" size="small">INGRESAR</ion-button>
-
-  <h6 [routerLink]="['/recover']">¿Olvidó su contraseña?</h6>
+  <ion-button size="small" (click)="enviarPerfil()">INGRESA</ion-button>
+  <br><br>
+  <a [routerLink]="['/recover']">¿Olvidó su contraseña?</a>
 
 </ion-content>
