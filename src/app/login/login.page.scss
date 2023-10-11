@@ -1,5 +1,8 @@
+*{
+    text-align: center;
+}
+
 ion-content {
-    position: relative;
     --background: #021F36;
     --color: #ffffff;
 }
@@ -42,4 +45,13 @@ h6 {
 
 .highlighted-word {
     color: #FFB719; 
+}
+
+a {
+    justify-content: center;
+}
+
+ion-card {
+    --background: #021F36;
+    --color: #ffffff;
 }
