@@ -15,5 +15,7 @@ export class MydbService {
     })
   }
 
+  apiURL = '';
+
   constructor() { }
 }
