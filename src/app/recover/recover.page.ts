@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MydbService } from '../service/mydb.service';
 
 @Component({
   selector: 'app-recover',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecoverPage implements OnInit {
 
-  constructor() { }
+  constructor(private mydb: MydbService) { }
 
   ngOnInit() {
   }
+
+ 
 
 }
