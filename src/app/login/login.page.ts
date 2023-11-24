@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
     pass: ""
   }
 
-  constructor(private router:Router, private activeRouter:ActivatedRoute, private mydb:MydbService, private Http: HttpClient) { }
+  constructor(private router:Router, private activeRouter:ActivatedRoute, private Http: HttpClient) { }
 
   enviarPerfil() {
     const navigationExtras: NavigationExtras = {

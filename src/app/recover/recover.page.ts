@@ -8,7 +8,7 @@ import { MydbService } from '../service/mydb.service';
 })
 export class RecoverPage implements OnInit {
 
-  constructor(private mydb: MydbService) { }
+  constructor() { }
 
   ngOnInit() {
   }
