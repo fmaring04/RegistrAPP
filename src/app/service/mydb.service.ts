@@ -34,7 +34,5 @@ export class MydbService {
   postAsistencia(data: any):Observable<any> {
     return this.http.post(this.apiURL+'/asistencia/', data);
   }
-
-  
   
 }
