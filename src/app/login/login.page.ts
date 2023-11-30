@@ -17,7 +17,9 @@ export class LoginPage implements OnInit {
     pass: ""
   }
 
-  constructor(private router:Router, private activeRouter:ActivatedRoute, private Http: HttpClient) { }
+  constructor(private router:Router, private activeRouter:ActivatedRoute, private Http: HttpClient, private mydb:MydbService) { 
+    
+  }
 
   enviarPerfil() {
     const navigationExtras: NavigationExtras = {
@@ -30,10 +32,6 @@ export class LoginPage implements OnInit {
   }
   
   ngOnInit() {
-    this.Http.get('https://qvdj7glb-8000.brs.devtunnels.ms/')
-    .subscribe(res => {
-      console.log(res);    
-    })
   }
 
 

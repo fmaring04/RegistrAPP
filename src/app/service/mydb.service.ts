@@ -19,8 +19,8 @@ export class MydbService {
 
   constructor(private http: HttpClient) { }
 
-  getUsuarios(data: any):Observable<any> {
-    return this.http.get(this.apiURL+'/usuarios/', data);
+  getUsuarios(filtro: string):Observable<any> {
+    return this.http.get(this.apiURL+'/usuarios/'+filtro);
   }
   
   updatePass(data: any):Observable<any> {
@@ -35,4 +35,5 @@ export class MydbService {
     return this.http.post(this.apiURL+'/asistencia/', data);
   }
   
+
 }
