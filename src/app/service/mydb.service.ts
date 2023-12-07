@@ -15,12 +15,13 @@ export class MydbService {
     })
   }
 
-  apiURL = 'https://qvdj7glb-8000.brs.devtunnels.ms/api';
+  private apiURL = 'https://qvdj7glb-8000.brs.devtunnels.ms/api';
 
   constructor(private http: HttpClient) { }
 
-  getUsuarios(filtro: string):Observable<any> {
-    return this.http.get(this.apiURL+'/usuarios/'+filtro);
+  getUsuarios(nombre: string, pass: string) {
+    const url = '${this.apiUrl}/usuarios/';
+    return this.http.get(url, { params: { nombre, pass } });
   }
   
   updatePass(data: any):Observable<any> {
