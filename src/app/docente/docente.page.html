@@ -1,13 +1,22 @@
 <ion-header [translucent]="false">
-  <ion-img src="http://www2.duoc.cl/sites/default/files/logo-2019-.png">
-  </ion-img>
-</ion-header>
-<ion-content [fullscreen]="true">
+  <img src="../../assets/img/Logouc.PNG"/>
   
-  <h1>Bienvenido/a {{user.usuario}}</h1>
+</ion-header>
+<ion-content [fullscreen]="true" >
+  
+  <h1>Bienvenido/a <span class="highlighted-word">{{user.usuario}}</span></h1>
+  <br>
 
-  <br>
-  <br>
+  <ion-card class="ion-text-center"> 
+    <ion-card-content> 
+      <qrcode
+        [qrdata]="qrCodeString" 
+        [width]="256" 
+        [errorCorrectionLevel]="'M'">
+      </qrcode>
+    <ion-card-content>
+  <ion-card>
+  
 
   <h2>Registra la asistencia <span class="highlighted-word">aquí</span></h2>
 
@@ -19,4 +28,4 @@
 
   
 
-</ion-content>
+<ion-content>

@@ -1,3 +1,7 @@
+*{
+    text-align: center;
+}
+
 ion-content {
     position: relative;
     --background: #021F36;
@@ -8,21 +12,16 @@ h1 {
     text-align: center;
 }
 
-ion-img {
+img {
     margin-top: 10px;
     margin-bottom: 30px;
-    height: 100px;
+    height: 70px;
 }
 
 h2 {
     text-align: center;
 }
 
-#imagen2 {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 50px;
-  }
 
 .highlighted-word {
   color: #FFB719; /* Color deseado para la palabra "aquí" */

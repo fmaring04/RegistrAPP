@@ -1,22 +1,25 @@
-+<ion-header [translucent]="false">
-    <ion-img src="http://www2.duoc.cl/sites/default/files/logo-2019-.png">
-    </ion-img>
-  </ion-header>
-  <ion-content [fullscreen]="true">
-    
-    <h1>Bienvenido/a {{user.usuario}}</h1>
-
-    <br>
-    <br>
-
-    <h2>Registra tu asistencia <span class="highlighted-word">aquí</span></h2>
-
-    
-    <ion-img id="imagen2"src="assets/flechas.jpg">
-    </ion-img>
++<ion-header>
+  <img src="../../assets/img/Logouc.PNG"/>
+</ion-header>
+<ion-content [fullscreen]="true" [style.visibility]="content_visibility">
   
-    <ion-button expand="block" size="small">REGISTRAR ASISTENCIA </ion-button>
+  <h1>Bienvenido/a <span class="highlighted-word">{{user.usuario}}</span></h1>
+
+  <br>
+
+  <h2>Registra tu asistencia <span class="highlighted-word">aquí</span></h2>
+
+<ion-button
+  expand="block"
+  class="ion-margin" 
+  (click)= "startScan()">
+  Registrar asistencia
+</ion-button>
+
+<ion-item *ngIf="scannedResult">
+  <ion-label class="ion-text-wrap">{{scannedResult}}</ion-label>
+</ion-item>
+
   
-    
-  
-  </ion-content>
+
+<ion-content>
