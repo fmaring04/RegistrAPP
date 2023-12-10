@@ -8,22 +8,25 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 })
 export class HomePage implements OnInit{
   
-  public user = {
-    usuario: "",
-    pass: ""
-  }
+  nombre: string = '';
+  id: number = 0;
 
   constructor(private router: Router, private activeRoute: ActivatedRoute) {
-
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if(state && state['nombre']) {
+      this.nombre = state['nombre'];
+      this.id = state['id'];
+    }
   }
 
   ngOnInit() {
     this.activeRoute.queryParams.subscribe(() => {
       let state = this.router.getCurrentNavigation()?.extras.state;
       if (state) {
-        this.user.usuario = state['user'].usuario;
-        this.user.pass = state['user'].pass;
-        console.log(this.user);
+        this.nombre = state['nombre'].nombre;
+        this.id = state['id'].id;
+        console.log(this.nombre);
+        console.log(this.id);
       }
     })
   }

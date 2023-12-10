@@ -19,9 +19,8 @@ export class MydbService {
 
   constructor(private http: HttpClient) { }
 
-  getUsuarios(nombre: string, pass: string) {
-    const url = '${this.apiUrl}/usuarios/';
-    return this.http.get(url, { params: { nombre, pass } });
+  getUsers(data: any):Observable<any> {
+    return this.http.get(this.apiURL+'/usuarios/', data);
   }
   
   updatePass(data: any):Observable<any> {
