@@ -81,7 +81,7 @@ export class LoginPage implements OnInit {
       this.storage.remove('pass');
     }
 
-    this.mydb.getUsers(this.loginForm.value).subscribe(
+    this.mydb.getUsers(this.loginForm.value.nombre).subscribe(
       (res) => {
         if (res.tipoUsuario == 1) {
           this.authService.authenticate();
@@ -98,7 +98,7 @@ export class LoginPage implements OnInit {
             state: { nom: nom, id: id },
           });
         }
-        
+
         this.error_msj = '';
       },
       (error) => {
