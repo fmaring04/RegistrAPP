@@ -9,7 +9,7 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 })
 export class HomePage implements OnInit, OnDestroy{
 
-  qrCodeString= "this is a secret QRcode message";
+  qrCodeString= "hola";
   scannedResult: any;
   content_visibility = "";
   

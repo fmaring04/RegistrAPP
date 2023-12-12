@@ -10,22 +10,25 @@ export class DocentePage implements OnInit{
 
   qrCodeString= "this is a secret QRcode message";
   
-  public user = {
-    usuario: "",
-    pass: ""
-  }
+  nom: string = '';
+  id: number = 0;
 
   constructor(private router: Router, private activeRoute: ActivatedRoute) {
-
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if(state && state['nom']) {
+      this.nom = state['nom'];
+      this.id = state['id'];
+    }
   }
 
   ngOnInit() {
     this.activeRoute.queryParams.subscribe(() => {
       let state = this.router.getCurrentNavigation()?.extras.state;
       if (state) {
-        this.user.usuario = state['user'].usuario;
-        this.user.pass = state['user'].pass;
-        console.log(this.user);
+        this.nom = state['nom'].nom;
+        this.id = state['id'].id;
+        console.log(this.nom);
+        console.log(this.id);
       }
     })
   }
