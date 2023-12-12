@@ -22,18 +22,5 @@ export class MydbService {
   getUsers(nom_usuario: string = ''):Observable<any> {
     return this.http.get(this.apiURL+'/detalle_usuarios/'+ nom_usuario);
   }
-  
-  updatePass(data: any):Observable<any> {
-    return this.http.put(this.apiURL+'/usuarios/', data);
-  }
-
-  getAsistencia(data: any):Observable<any> {
-    return this.http.get(this.apiURL+'/asistencia/', data);
-  }
-
-  postAsistencia(data: any):Observable<any> {
-    return this.http.post(this.apiURL+'/asistencia/', data);
-  }
-  
 
 }

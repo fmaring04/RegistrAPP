@@ -12,19 +12,19 @@
   <form [formGroup]="loginForm" (ngSubmit)="login">
   
     <ion-card>
-      <ion-input formControlName="nombre" [(ngModel)]="nombre" [class.is-invalid]="invaledName" label="Usuario" label-placement="floating" fill="outline" placeholder="Enter text" maxlength="25" minlength="3"></ion-input>
-      <ion-input formControlName="pass" [(ngModel)]="pass" [class.is-invalid]="invaledPass" label="Contraseña" label-placement="floating" fill="outline" placeholder="Enter text" type="password" maxlength="4"></ion-input>
+      <ion-input formControlName="nombre" [(ngModel)]="nombre" [class.is-invalid]="invalidName" label="Usuario" label-placement="floating" fill="outline" placeholder="Enter text" maxlength="25" minlength="3"></ion-input>
+      <ion-input formControlName="pass" [(ngModel)]="pass" [class.is-invalid]="invalidPass" label="Contraseña" label-placement="floating" fill="outline" placeholder="Enter text" type="password" maxlength="4"></ion-input>
     </ion-card>
-    <ion-text color="danger" *ngIf="invaledName">
+    <ion-text color="danger" *ngIf="invalidName">
       <p class="mensaje">Usuario incorrecto</p>
     </ion-text>
-    <ion-text color="danger" *ngIf="invaledPass">
+    <ion-text color="danger" *ngIf="invalidPass">
       <p class="mensaje">Contraseña incorrecta</p>
     </ion-text>
     <ion-text color="danger">
       <p class="mensaje">{{error_msj}}</p>
     </ion-text>
-    <ion-checkbox class="check" justify="end" [ngModelOptions]="{standalone: true}" [(ngModel)]="remember" (ionChange)="switchRememberOption()" >Recuerdame</ion-checkbox>
+    <ion-checkbox class="check" justify="end" [ngModelOptions]="{standalone: true}" [(ngModel)]="remember" (ionChange)="switchRememberOption()">Recuerdame</ion-checkbox>
     <br><br>
     <ion-button size="small" (click)="login()" [disabled]="(loginForm.status) === 'INVALID'">INGRESA</ion-button>
     <br><br>

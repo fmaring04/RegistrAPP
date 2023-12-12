@@ -39,14 +39,13 @@ export class LoginPage implements OnInit {
     console.log(this.loginForm.value);
   }
 
-  get invaledName() {
+  get invalidName() {
     return (
-      this.loginForm.get('nombre')?.invalid &&
-      this.loginForm.get('nombre')?.touched
+      this.loginForm.get('nombre')?.invalid && this.loginForm.get('nombre')?.touched
     );
   }
 
-  get invaledPass() {
+  get invalidPass() {
     return (
       this.loginForm.get('pass')?.invalid && this.loginForm.get('pass')?.touched
     );
@@ -72,7 +71,7 @@ export class LoginPage implements OnInit {
     this.storage.set('rememberUser', this.remember);
   }
 
-  login() {
+  async login() {
     if (this.remember) {
       this.storage.set('nombre', this.loginForm.get('nombre')?.value);
       this.storage.set('pass', this.loginForm.get('pass')?.value);
@@ -81,7 +80,7 @@ export class LoginPage implements OnInit {
       this.storage.remove('pass');
     }
 
-    this.mydb.getUsers(this.loginForm.value.nombre).subscribe(
+    /* this.mydb.getUsers(this.loginForm.value.nombre).subscribe(
       (res) => {
         if (res.tipoUsuario == 1) {
           this.authService.authenticate();
@@ -98,7 +97,6 @@ export class LoginPage implements OnInit {
             state: { nom: nom, id: id },
           });
         }
-
         this.error_msj = '';
       },
       (error) => {
@@ -114,27 +112,34 @@ export class LoginPage implements OnInit {
           }, 6000);
         }
       }
-    );
-    // this.getUsers();
-    /* this.mydb.getUsers().subscribe(
-      data => {
-        console.log(data);
-
-      }
     ); */
 
-    /*     if(this.usuarios.nom_usuario === this.nombre && this.usuarios.contraseña === this.pass) {
-      if(this.usuarios.tipoUsuario === 1){
-        this.router.navigate(['/home'], {
-          state: {nombre: this.usuarios.pnombre + ' ' + this.usuarios.appaterno},
-        });
-      } else if (this.usuarios.tipoUsuario === 2) {
-        this.router.navigate(['/docente'], {
-          state: {nombre: this.usuarios.pnombre + ' ' + this.usuarios.appaterno},
-        });
-      };
-    } else {
-      console.log('error');
-    }; */
+    this.mydb.getUsers(this.loginForm.value.nombre).subscribe(
+      (res) => {
+        if(res.nom_usuario == this.loginForm.value.nombre && res.contraseña == this.loginForm.value.pass) {
+          if (res.tipoUsuario == 1) {
+          this.authService.authenticate();
+          let id: number = res.id_usuario;
+          let nom: string = res.pnombre + ' ' + res.appaterno;
+          this.router.navigate(['/home'], {
+            state: { nom: nom, id: id },
+          });
+          } else if (res.tipoUsuario == 2) {
+            this.authService.authenticate();
+            let id: number = res.id_usuario;
+            let nom: string = res.pnombre + ' ' + res.appaterno;
+            this.router.navigate(['/docente'], {
+              state: { nom: nom, id: id },
+            });
+          }
+        } else {
+          if(res.contraseña !== this.loginForm.value.pass) {
+            this.error_msj = "Contraseña incorrecta"
+          }
+        }
+      }
+    );
+
+    this.error_msj = "";
   }
 }

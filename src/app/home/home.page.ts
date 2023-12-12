@@ -13,8 +13,8 @@ export class HomePage implements OnInit{
 
   constructor(private router: Router, private activeRoute: ActivatedRoute) {
     const state = this.router.getCurrentNavigation()?.extras.state;
-    if(state && state['nombre']) {
-      this.nombre = state['nombre'];
+    if(state && state['nom']) {
+      this.nombre = state['nom'];
       this.id = state['id'];
     }
   }
@@ -23,7 +23,7 @@ export class HomePage implements OnInit{
     this.activeRoute.queryParams.subscribe(() => {
       let state = this.router.getCurrentNavigation()?.extras.state;
       if (state) {
-        this.nombre = state['nombre'].nombre;
+        this.nombre = state['nom'].nombre;
         this.id = state['id'].id;
         console.log(this.nombre);
         console.log(this.id);

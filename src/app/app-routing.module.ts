@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 
+
 const routes: Routes = [
   {
     path: 'home',
@@ -19,13 +20,13 @@ const routes: Routes = [
   {
     path: 'recover',
     loadChildren: () => import('./recover/recover.module').then( m => m.RecoverPageModule) 
-  },  {
+  },
+  {
     path: 'docente',
     loadChildren: () => import('./docente/docente.module').then( m => m.DocentePageModule)
   },
 
-
-
+  
 ];
 
 @NgModule({
