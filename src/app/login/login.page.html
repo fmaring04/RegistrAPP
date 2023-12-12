@@ -13,6 +13,7 @@
   
     <ion-card>
       <ion-input formControlName="nombre" [(ngModel)]="nombre" [class.is-invalid]="invalidName" label="Usuario" label-placement="floating" fill="outline" placeholder="Enter text" maxlength="25" minlength="3"></ion-input>
+      <br>
       <ion-input formControlName="pass" [(ngModel)]="pass" [class.is-invalid]="invalidPass" label="Contraseña" label-placement="floating" fill="outline" placeholder="Enter text" type="password" maxlength="4"></ion-input>
     </ion-card>
     <ion-text color="danger" *ngIf="invalidName">
