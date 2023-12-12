@@ -1,13 +1,18 @@
+*{
+    text-align: center;
+
+}
+
 ion-content {
     position: relative;
     --background: #021F36;
     --color: #ffffff;
 }
 
-ion-img {
+img {
     margin-top: 10px;
-    margin-bottom: 30px;
-    height: 100px;
+    margin-bottom: 30px;  
+    height: 70px;
 }
 
 h1 {

@@ -7,6 +7,8 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
   styleUrls: ['docente.page.scss'],
 })
 export class DocentePage implements OnInit{
+
+  qrCodeString= "this is a secret QRcode message";
   
   public user = {
     usuario: "",
