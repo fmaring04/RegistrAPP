@@ -13,20 +13,25 @@ export class HomePage implements OnInit, OnDestroy{
   scannedResult: any;
   content_visibility = "";
   
-  public user = {
-    usuario: "",
-    pass: ""
+  nombre: string = '';
+  id: number = 0;
+
+  constructor(private router: Router, private activeRoute: ActivatedRoute) {
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if(state && state['nom']) {
+      this.nombre = state['nom'];
+      this.id = state['id'];
+    }
   }
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute) {}
-
-  ngOnInit() {
+ngOnInit() {
     this.activeRoute.queryParams.subscribe(() => {
       let state = this.router.getCurrentNavigation()?.extras.state;
       if (state) {
-        this.user.usuario = state['user'].usuario;
-        this.user.pass = state['user'].pass;
-        console.log(this.user);
+        this.nombre = state['nom'].nombre;
+        this.id = state['id'].id;
+        console.log(this.nombre);
+        console.log(this.id);
       }
     })
   }

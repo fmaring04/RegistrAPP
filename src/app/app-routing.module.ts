@@ -23,7 +23,7 @@ const routes: Routes = [
     path: 'recover',
     loadChildren: () => import('./recover/recover.module').then( m => m.RecoverPageModule) 
   },
-  
+
   {
     path: 'docente',
     loadChildren: () => import('./docente/docente.module').then( m => m.DocentePageModule)
@@ -31,6 +31,10 @@ const routes: Routes = [
   
 
 ];
+
+  
+];
+
 
 @NgModule({
   imports: [
